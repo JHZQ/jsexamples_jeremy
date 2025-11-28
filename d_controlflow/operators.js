@@ -19,7 +19,7 @@ console.log(a < 0 || b < 0); // false or false = false
 console.log("");
 
 // Using ! operator
-console.log("! 'NOT' operator sets value to invalid or opposite");
+console.log("! 'Not Equal' operator checks if 2 values are not equal,");
 let Yes = true;
 let No = false;
 console.log(!Yes); // yes is set to true, so ! will set to false
