@@ -41,10 +41,7 @@ function ftnRadioMeal(meal) {
 
   let msg = "Thank you.";
 
-  let msg = "Thank you. ";
-
   // TODO: using switch statement to provide the appropriate feedback to the user
-<<<<<<< HEAD
   // alert(`You have chosen ${meal}`); // displays chosen meal in the alert
   // alert(`You have chosen ${meal.toLowerCase()}`); // sets chosen meal text to lowercase
 
@@ -63,27 +60,9 @@ function ftnRadioMeal(meal) {
 
     default:
       msg = msg + " You enjoy eating air"
-=======
-  switch (meal) {
-    case "Vegetarian":
-      msg = msg + "Please contact us to arrange.";
-      break;
-    case "Beef":
-      msg = msg + "We are serving beef wellington.";
-      break;
-    case "Chicken":
-      msg = msg + "We are serving chicken cordon blue.";
-      break;
-    default:
-      msg = msg + "No meal preference.";
->>>>>>> f9590f637c3e0f0120c70ac04ff5853a182e4710
       break;
   }
 
   // TODO: Display the message to the user
   document.getElementById("displayPreference").textContent = msg;
-<<<<<<< HEAD
-=======
-
->>>>>>> f9590f637c3e0f0120c70ac04ff5853a182e4710
 }

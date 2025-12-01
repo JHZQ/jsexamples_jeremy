@@ -6,12 +6,7 @@
   of the salutations to pupulate inputSelect
   found in index.html
 */
-<<<<<<< HEAD
 function ftnSalutation() {
-=======
-function ftnSalutation(){
-  //  implement your statement(s) here
->>>>>>> f9590f637c3e0f0120c70ac04ff5853a182e4710
   return new Array("Mr.", "Mrs.", "Ms.", "Dr.");
 }
 
@@ -22,12 +17,7 @@ function ftnSalutation(){
   calls it
 */
 const ftnGreeting = (salutation, user) => {
-<<<<<<< HEAD
   return `Hi, ${salutation} ${user}.`;
-=======
-    //  implement your statement(s) here
-    return `Hi, ${salutation} ${user}!`;
->>>>>>> f9590f637c3e0f0120c70ac04ff5853a182e4710
 }
 
 /*
@@ -39,7 +29,6 @@ Hint:
 - validateInputs returns false if either choice or name is incorrectly filled
 - validateInputs returns true if both choice and name are correctly filled
 */
-<<<<<<< HEAD
 
 // const validateInputs = (choice, name = "") => {
 //   if (!choice || !name)
@@ -60,10 +49,3 @@ const validateInputs = (choice, name) => {
 // }
 
 // console.log(validateInputs("asd", "asd"));
-=======
-function validateInputs(choice = "", name = ""){
-
-  return choice !== "" && name !== "";
-
-}
->>>>>>> f9590f637c3e0f0120c70ac04ff5853a182e4710
