@@ -108,18 +108,70 @@ class Field {
    * @param {*} input - accept the value of the player's move (UP, DOWN, LEFT, RIGHT,) 
    */
   updateGame(input) {
-    // capture the player's currentX and currentY position first
-    // update the field to show the player's new position
-    // check if player x and y position is a HOLE
-    //    LOSE
-    // if player x and y position is an OUT
-    //    LOSE
-    // if player x and y position === x and y position of HAT
-    //    WIN
-    // otherwise, move the player to the new x and y position
+    // capture player's current position where y = rows, x = cols
+    let currentY = this.playerPosition.y;
+    let currentX = this.playerPosition.x;
 
-    //if(hatBlocked(this.field) && !this.gamePlay)
-    // this.field = Field.generateField();
+    // calculate new position based on input by increasing or decreasing the y or x value
+    switch (input.toLowerCase()) {
+      case UP:
+        this.updateMove(UP);
+        currentY--;
+        break;
+      case DOWN:
+        this.updateMove(DOWN);
+        currentY++;
+        break;
+      case LEFT:
+        this.updateMove(LEFT);
+        currentX--;
+        break;
+      case RIGHT:
+        this.updateMove(RIGHT);
+        currentX++
+        break;
+      case QUIT:
+        this.updateMove(QUIT);
+        break;
+      default:
+        this.updateMove();
+        break;
+    }
+
+    // check if player is out of bounds
+    if (currentY < 0 || currentY >= this.field.length ||
+      currentX < 0 || currentX >= this.field.length) {
+      console.log(OUT);
+      this.gamePlay = false;
+      return;
+    }
+
+    // check what's at the new position
+    const newPosition = this.field[currentY][currentX];
+
+    // check if player found the hat
+    if (newPosition === HAT) {
+      console.log(WIN);
+      this.gamePlay = false;
+      return;
+    }
+
+    // check if player fell into a hole
+    if (newPosition === HOLE) {
+      console.log(LOSE);
+      this.gamePlay = false;
+      return;
+    }
+
+    // sets the previous position to grass
+    this.field[this.playerPosition.y][this.playerPosition.x] = GRASS;
+
+    // update player position
+    this.playerPosition.y = currentY;
+    this.playerPosition.x = currentX;
+
+    // place player at new position
+    this.field[currentY][currentX] = PLAYER;
   }
 
   // start() a method of the class to start the game
@@ -134,6 +186,9 @@ class Field {
       this.printField();     // print the formatted field
       console.log();         // Adds spacing below the game
       const input = prompt("(w)up, (s)down, (a)left, (d)right, (q)exit: ");
+
+      // updates the state of game
+      this.updateGame(input);
 
       if (input == QUIT)
         this.gamePlay = false;  // another way to end program: process.exit();
