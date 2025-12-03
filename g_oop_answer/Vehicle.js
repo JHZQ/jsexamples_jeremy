@@ -1,6 +1,6 @@
 // Constructor function for creating a Vehicle object
 class Vehicle {
-    constructor(make, model, year){
+    constructor(make, model, year) {
         this.make = make; // Property to store the vehicle's make
         this.model = model; // Property to store the vehicle's model
         this.year = year; // Property to store the vehicle's year of launch / production
@@ -16,7 +16,7 @@ class Vehicle {
 
     // Method to get the total distance travelled
     getTotalDistance() {
-        return this.kilometersDriven;
+        return this.distanceTraveled;
     };
 }
 

@@ -1,16 +1,16 @@
 // Car is a child class of Vehicle 
-const Vehicle = require("./Vehicle.js"); 
+const Vehicle = require("./Vehicle.js");
 
 class Car extends Vehicle { // <-- INHERITANCE: Using 'extends' establishes the inheritance relationship
 
     constructor(make, model, year) {
         super(make, model, year); // <-- INHERITANCE: The 'super()' call executes the parent's (Vehicle's) constructor
-        this.hasAirbag = true; 
+        this.hasAirbag = true;
     }
 
     // static Method does not have to be instantiated as an instance 
     // static Method can be directly accessed via the class itself
-    static welcomeStatement(msg){
+    static welcomeStatement(msg) {
         console.log(msg);
     }
 
