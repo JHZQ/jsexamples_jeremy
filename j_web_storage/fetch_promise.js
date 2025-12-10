@@ -1,7 +1,7 @@
 function fetchData() {
   // TODO: fetch via promise
   fetch('https://reqres.in/api/unknown', {
-    headers: { 'x-api-key': 'reqres_12c9cc65011442af921bd9a4cb2f875f' }
+    headers: { 'x-api-key': API_KEY }
   }).then((response) => {
     // if the response has an issue, throw a custom response (gracefully)
     if (!response.status === 403)

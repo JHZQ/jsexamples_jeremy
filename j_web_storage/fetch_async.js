@@ -4,7 +4,7 @@ async function fetchData() {
 
     // take note of the prepended keyword await
     const response = await fetch('https://reqres.in/api/unknown', {
-      headers: { 'x-api-key': 'reqres_12c9cc65011442af921bd9a4cb2f875f' }
+      headers: { 'x-api-key': API_KEY }
     });
 
     // handle errors gracefully
